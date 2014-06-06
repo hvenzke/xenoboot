@@ -1,0 +1,33 @@
+Xenoservers
+	
+"The Xenoserver project aims to build a public infrastructure for wide-area distributed computing."
+	
+Xenoboot
+XenoBoot is our system for performing remote boot and management of x86 machines scattered over the public Internet. It provides a convenient way controlling the boot process of a remote machine, enabling, for example:
+
+    selection of which OS or kernel to boot
+    booting kernels and root images downloaded over the network
+    automated system re-installation or repair
+    interactive system repair or administration 
+
+These facilities are provided in an authenticated and secure manner suitable for use across the public Internet. The system is flexible, enabling booting of pretty much any type of kernel, and remote administration of most file system types.
+
+The system is also relatively failsafe, able to recover the system even in the presence of gross corruption of the hard disk. This is achieved through using a bootable CD image, which due to its read-only nature should enable the system to boot in any event except hardware failure or certain corruptions of the BIOS NVRAM. The bootable CD loads a full linux operating system, and then contacts a central server, which gives it a script to run. The script has access to a range of utilities and applications on the CD, and can be tailored to fit the individual machine and circumstance.
+
+XenoBoot avoids the need for remote serial console servers to administer machines - everything can be done over a secure network connection. For resetting "wedged" machines we either use hardware watchdog cards, or for extra reliability, remote power control switches.
+
+Downloads
+
+The current version of the Xenoboot CD is v2.3; you can download it here. The README file is here. To customize, build and use the CD, you'll need:
+
+    About 1.8 GB of free space (the final ISO image is about 425 MB);
+    A recent copy of mkisofs (from the cdrtools package);
+    The ZISOFS tools;
+    A HTTP/S server, capable of serving CGI scripts;
+    GnuPG. 
+
+If you have any questions or feedback about Xenoboot, email Tim Deegan.
+
+Most of the software on the CD is taken from the gentoo linux distribution; source code is included, and is also available via gentoo.
+The Xenoboot scripts and utilities are distributed under the GNU General Public License; source code is included in the tarball.
+The Xenoboot utilities include modified versions of Eric Biederman's kexec code (with patches by the Planet-lab team), and of Erik Hendriks's two-kernel monte code. 
